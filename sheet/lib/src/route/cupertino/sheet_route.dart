@@ -73,11 +73,7 @@ class _CupertinoSheetDecorationBuilder extends StatelessWidget {
               color: backgroundColor ??
                   CupertinoColors.systemBackground.resolveFrom(context),
             ),
-            child: MediaQuery.removePadding(
-              context: context,
-              removeTop: true,
-              child: child,
-            ),
+            child: child,
           );
         },
       ),
@@ -130,7 +126,7 @@ class CupertinoSheetRoute<T> extends SheetRoute<T> {
   Color? get barrierColor => Colors.transparent;
 
   @override
-  bool get barrierDismissible => true;
+  bool get barrierDismissible => false;
 
   @override
   Widget buildSheet(BuildContext context, Widget child) {
