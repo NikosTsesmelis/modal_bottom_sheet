@@ -138,7 +138,7 @@ class CupertinoSheetRoute<T> extends SheetRoute<T> {
     if (!draggable) {
       effectivePhysics = const NeverDraggableSheetPhysics();
     }
-    final MediaQueryData mediaQuery = MediaQuery.of(context);
+    final MediaQueryData mediaQuery = MediaQueryData.fromWindow(window);
     final double topMargin =
         math.max(_kSheetMinimalOffset, mediaQuery.padding.top) +
             _kPreviousRouteVisibleOffset;
@@ -160,7 +160,7 @@ class CupertinoSheetRoute<T> extends SheetRoute<T> {
     Animation<double> secondaryAnimation,
     Widget child,
   ) {
-    final double topPadding = MediaQuery.of(context).padding.top;
+    final double topPadding = MediaQueryData.fromWindow(window).padding.top;
     final double topOffset = math.max(_kSheetMinimalOffset, topPadding);
     return AnimatedBuilder(
       animation: secondaryAnimation,
@@ -247,9 +247,9 @@ class CupertinoSheetBottomRouteTransition extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double topPadding = MediaQuery.of(context).padding.top;
+    final double topPadding = MediaQueryData.fromWindow(window).padding.top;
     final double topOffset = math.max(_kSheetMinimalOffset, topPadding);
-    final Radius deviceCorner = _getRadiusForDevice(MediaQuery.of(context));
+    final Radius deviceCorner = _getRadiusForDevice(MediaQueryData.fromWindow(window));
 
     final CurvedAnimation curvedAnimation = CurvedAnimation(
       parent: sheetAnimation,
