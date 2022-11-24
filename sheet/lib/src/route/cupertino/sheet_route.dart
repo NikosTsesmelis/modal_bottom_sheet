@@ -74,7 +74,13 @@ class _CupertinoSheetDecorationBuilder extends StatelessWidget {
               color: backgroundColor ??
                   CupertinoColors.systemBackground.resolveFrom(context),
             ),
-            child: child,
+            child: MediaQuery(
+              key: key,
+              data: MediaQueryData.fromWindow(window).removePadding(
+                removeTop: true,
+              ),
+              child: child,
+            ),
           );
         },
       ),
