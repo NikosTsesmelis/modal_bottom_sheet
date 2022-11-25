@@ -178,6 +178,7 @@ class SheetRoute<T> extends PageRoute<T> with DelegatedTransitionsRoute<T> {
   /// Returns true if the controller should prevent popping for a given extent
   @protected
   bool shouldPreventPopForExtent(double extent) {
+    return false;
     return extent < willPopThreshold &&
         hasScopedWillPopCallback &&
         controller!.velocity <= 0;
