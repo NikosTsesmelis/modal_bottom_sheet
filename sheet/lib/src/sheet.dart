@@ -794,12 +794,12 @@ class RenderSheetViewport extends RenderBox
       double maxHeight = maxExtent.clamp(0, constraints.maxHeight);
       double minHeight = expand ? maxHeight : 0;
 
-      if (isOverflow) {
-        final double overflowHeight =
-            _childExtentBeforeOverflow! + offset.pixels;
-        maxHeight = overflowHeight;
-        minHeight = overflowHeight;
-      }
+//       if (isOverflow) {
+//         final double overflowHeight =
+//             _childExtentBeforeOverflow! + offset.pixels;
+//         maxHeight = overflowHeight;
+//         minHeight = overflowHeight;
+//       }
 
       final BoxConstraints childContstraints = BoxConstraints(
         minHeight: minHeight,
