@@ -421,10 +421,11 @@ class __SheetRouteContainerState extends State<_SheetRouteContainer>
           toHigh: 1,
         );
         _routeController.value = animationValue;
-        
-        if (_sheetController.animation.value == 0) {
-          widget.sheetRoute.navigator?.pop();
-        }
+      }
+    }
+    if (_sheetController.animation.value == 0) {
+      if (!_routeController.isAnimating || _firstAnimation) {
+        widget.sheetRoute.navigator?.pop();
       }
     }
   }
