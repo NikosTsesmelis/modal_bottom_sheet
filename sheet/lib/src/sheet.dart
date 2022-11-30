@@ -661,7 +661,9 @@ class RenderSheetViewport extends RenderBox
       _childExtentBeforeOverflow ??= child!.size.height;
       _isOverflow = true;
       markNeedsLayout();
-    } else if (isOverflow && offset.pixels < _childExtentBeforeOverflow!) {
+    } else if (_isOverflow && offset.pixels > _childExtentBeforeOverflow!) {
+      markNeedsLayout();
+    } else if (isOverflow && offset.pixels <= _childExtentBeforeOverflow!) {
       _childExtentBeforeOverflow = null;
       _isOverflow = false;
       markNeedsLayout();
