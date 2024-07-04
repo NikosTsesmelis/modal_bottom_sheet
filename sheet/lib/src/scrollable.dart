@@ -870,7 +870,7 @@ class _RenderScrollSemantics extends RenderProxyBox {
 
     _innerNode ??= SemanticsNode(showOnScreen: showOnScreen);
     _innerNode!
-      ..isMergedIntoParent = node.isPartOfNodeMerging
+      //..isMergedIntoParent = node.isPartOfNodeMerging
       ..rect = node.rect;
 
     int? firstVisibleIndex;
